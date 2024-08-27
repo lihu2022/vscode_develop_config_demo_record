@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS: launch",
+            "request": "launch",
+            "target": "/home/lixiang/liom_planner/src/liom_local_planner/launch/demo_test.launch",
+            // "launch": "[]",
+            "type": "ros"
+
+        }
+    ]
+}
+
+##上述是launch.json文件的示意，针对于ros项目可以用指定launch文件进行调试，也可以书写多个配置，指定不同的debug。

@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",                          // 指定 launch.json 文件的版本号
+    "configurations": [                          // 包含一系列调试配置
+        {
+            "name": "Python 调试程序: 当前文件",   // 此调试配置的名称，将在 VSCode 的调试启动配置中显示
+            "type": "debugpy",                   // 指定调试器类型，对于 Python 是 debugpy
+            "request": "launch",                 // 表示这是一个启动（运行）调试会话的请求
+            // "cwd": "${workspaceFolder}",      // 表示当前工作目录，被注释掉了，说明使用默认设置或继承 VSCode 终端的当前路径
+            "program": "${file}",                // 指定被调试的程序文件，这里使用变量 `${file}` 表示当前打开的文件
+            "console": "integratedTerminal",     // 指定输出显示在集成终端中
+            "args": ["False", "use_cnn"]         // 启动程序时传递给它的命令行参数列表
+        }
+    ]
+}

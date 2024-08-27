@@ -1,0 +1,14 @@
+{
+    "cmake.sourceDirectory": "/home/lixiang/liom_planner/src",
+    // 这个设置指定了 CMake 的源目录（sourceDirectory），CMake Tools 扩展将在这个目录下寻找 CMakeLists.txt 文件来配置和构建项目。
+    ##notice！！！！！！！此处对应的是toplevel的cmakelists，而不是功能包下的cmakelists！！！！！！！！！！！！！！！！！！！	
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    // 为 Python 自动补全提供了额外的搜索路径，指定了ROS Noetic对应的 Python packages 目录。这确保了在使用 Python 插件时，VSCode 能够补全那些安装在 ROS 目录下的 Python 模块。
+
+    "python.analysis.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+    // 为 Python 代码分析提供了额外的搜索路径，同样指定为 ROS Noetic 对应的 Python packages 目录。这有助于 Python 扩展在类型检查、错误诊断等静态代码分析时能识别 ROS 所使用的模块。
+}

@@ -1,0 +1,36 @@
+#如果遇到代码编译后可以正常运行，但是用vscode打开后一大堆报错和警告，包括但不限于while，if，for等报错，此时应该是代码开发者用的不是vscode而是其他的IDE，因此需要在编译的过程中添加选项，如下所述。
+##notice：此处示意以ros项目为例，使用catkin_make命令行进行编译，其他的项目可以看看如何添加选项，只要是依赖于cmakelists构建的项目都允许添加此配置。
+##terminator
+
+	catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+##运行编译成功后，将在build文件夹中生成compile_commands.json
+
+##复制其绝对路径，将绝对路径写进.vscode/c_cpp_properties.json/
+
+##example c_cpp_properties.json
+
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/opt/ros/noetic/include/**",
+                "${workspaceFolder}/**",
+                "/usr/include/**",
+                "/home/liom_planner/src/liom_local_planner/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}
+
+##输入格式如上所述
+
+##因此处将c_cpp_properties.json进行示意，因此有关vscode的debug配置文件的设置不再记录c_cpp_properties.json
